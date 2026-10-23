@@ -1,0 +1,150 @@
+:root {
+    --purple: #8b5cf6;
+    --panel: rgba(20, 16, 35, 0.92);
+    --border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background: #171024;
+}
+
+/* Fond indépendant du contenu */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35);
+}
+
+/* Titres */
+h1 {
+    font-size: clamp(28px, 5vw, 45px);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 25px 0 15px;
+}
+
+/* Score */
+#score {
+    font-size: 55px;
+    color: #c4b5fd;
+    text-shadow: 0 0 20px #8b5cf6;
+}
+
+/* Boutons et sélecteurs */
+button, select, input {
+    margin: 6px;
+    padding: 11px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+button {
+    color: white;
+    background: var(--purple);
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background: #a78bfa;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+select, input {
+    max-width: 100%;
+    color: white;
+    background: #211a35;
+    border: 1px solid var(--border);
+}
+
+/* Cookie central */
+#cookie {
+    display: block;
+    width: min(260px, 70vw);
+    height: min(260px, 70vw);
+    object-fit: contain;
+    margin: 25px auto;
+    cursor: pointer;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+    transition: transform 0.15s;
+}
+
+#cookie:hover {
+    transform: scale(1.06);
+}
+
+#cookie:active {
+    transform: scale(0.94);
+}
+
+/* Boutiques et bonus */
+#cookieShop,
+#backgroundShop,
+#boosts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 1000px;
+    margin: 15px auto 35px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+}
+
+/* Personnalisation */
+label {
+    display: inline-block;
+    padding: 12px;
+    margin: 5px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    #score {
+        font-size: 42px;
+    }
+
+    #cookieShop,
+    #backgroundShop,
+    #boosts {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>COOKIE CLICKER</h1>
+    <h2 id="score">0</h2>
+
+    <button onclick="pauseGame()" id="pause">PAUSE</button>
+    <button onclick="resetGame()">RESET TOTAL</button>
+
+    <br><br>
+
+    <img id="cookie" src="img/cookie.png" onclick="clickCookie()">
+
+    <h2>Cookies</h2>
+    <div id="cookieShop"></div>
+
+    <h2>Backgrounds</h2>
+    <div id="backgroundShop"></div>
+
+    <h2>Boosts</h2>
+    <div id="boosts"></div>
+
+    <h2>Personnalisation</h2>
+    <label>Importer un cookie :
+        <input type="file" accept="image/*" onchange="uploadCookie(event)">
+    </label>
+
+    <br>
+
+    <label>Importer un background :
+        <input type="file" accept="image/*" onchange="uploadBackground(event)">
+    </label>
+
+    <script src="script.js"></script>
+</body>
+</html>
